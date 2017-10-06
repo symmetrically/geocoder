@@ -1,7 +1,8 @@
 defmodule Geocoder.Store do
   use GenServer
   use Towel
-
+  import Maybe
+  
   # Public API
   def geocode(opts) do
     GenServer.call(name(), {:geocode, opts[:address]})
